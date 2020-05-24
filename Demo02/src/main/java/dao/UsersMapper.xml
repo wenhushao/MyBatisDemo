@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.UsersMapper">
+
+    <!-- 添加   parameterType相当于方法里面传参数
+    public void (Users u){}
+    -->
+    <insert id="add" parameterType="users">
+        insert into users(name,password) values(#{name},#{password})
+    </insert>
+
+    <insert id="addMapper" parameterType="map">
+        insert into users (id,name,password) values (#{userid},#{username},#{pwd})
+    </insert>
+    <!-- 单个查询
+    执行select标签需要有返回，用
+      resultType返回
+      -->
+    <select id="selectOne" resultType="users" parameterType="Integer">
+        select * from users where id=#{id}
+    </select>
+
+    <!-- 修改 -->
+    <update id="update" parameterType="users">
+        update users set password=#{password} where id=#{id}
+    </update>
+
+    <update id="updateMapper" parameterType="map">
+        update users set name=#{username},password=#{pwd} where id=#{userid}
+    </update>
+
+    <delete id="delete" parameterType="Integer">
+        delete from users where id=#{id}
+    </delete>
+
+    <select id="selectAll" resultType="users">
+        select * from users
+    </select>
+
+    <!-- 分页查询-->
+    <select id="selectByLimit" parameterType="map" resultType="users">
+        select * from users limit #{startIndex},#{pageSize};
+    </select>
+
+    <select id="selectByRowBounds" resultType="users">
+        select * from users;
+    </select>
+
+</mapper>
