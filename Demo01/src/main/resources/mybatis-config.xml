@@ -15,7 +15,7 @@
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <property name="url"
-                          value="jdbc:mysql://localhost:3306/mybatis?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF8"/>
+                          value="jdbc:mysql://localhost:3306/mybatis?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF8MB4"/>
                 <property name="username" value="root"/>
                 <property name="password" value="201606"/>
             </dataSource>
@@ -26,7 +26,7 @@
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <property name="url"
-                          value="jdbc:mysql://localhost:3308/test?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF8&amp;serverTimezone=UTC"/>
+                          value="jdbc:mysql://localhost:3308/test?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF8MB4&amp;serverTimezone=UTC"/>
                 <property name="username" value="root"/>
                 <property name="password" value="201606"/>
             </dataSource>
